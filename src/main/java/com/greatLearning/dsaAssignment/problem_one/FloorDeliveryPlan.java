@@ -1,6 +1,7 @@
 package com.greatLearning.dsaAssignment.problem_one;
 
 import java.util.ArrayDeque;
+import java.util.InputMismatchException;
 import java.util.Queue;
 import java.util.Scanner;
 
@@ -15,7 +16,7 @@ public class FloorDeliveryPlan {
             System.out.println("Enter the total no of floors in the building : ");
             numberOfFloors = scanner.nextInt();
         }//if user enters value other then int, quit
-        catch (NumberFormatException e) {
+        catch (InputMismatchException e) {
             System.out.println("Expected integer value, quitting, Bye!!!");
             System.exit(0);
         }//if exception occurs, quit
@@ -60,7 +61,7 @@ public class FloorDeliveryPlan {
                 ++dayNumber;
             }
         }//if provided non-integer value, quit
-        catch (NumberFormatException e) {
+        catch (InputMismatchException e) {
             System.out.println("Expected integer value, quitting, Bye!!!");
             System.exit(0);
         }//if exception occurs, quit
