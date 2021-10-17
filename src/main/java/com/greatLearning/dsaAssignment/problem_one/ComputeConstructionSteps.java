@@ -45,8 +45,7 @@ public class ComputeConstructionSteps {
         int k = 0;
 
         //if maxFloorSize is 0, print appropriate message
-        if(maxFloorSize == 0)
-        {
+        if (maxFloorSize == 0) {
             System.out.println("Total number of floors are Zero, there is no plan to print.");
             return;
         }

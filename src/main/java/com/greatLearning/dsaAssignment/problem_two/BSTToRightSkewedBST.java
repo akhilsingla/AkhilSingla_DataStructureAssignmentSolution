@@ -1,12 +1,9 @@
 package com.greatLearning.dsaAssignment.problem_two;
 
-import java.util.Scanner;
-
 /*
     class to convert BST to Right Skewed BST and print the same
  */
-public class BSTToRightSkewedBST
-{
+public class BSTToRightSkewedBST {
     /*
         declare variables
         ancestorNode of SkewedBST
@@ -16,8 +13,7 @@ public class BSTToRightSkewedBST
     private Node rootNodeOfSkewedBST = null;
 
     //convert BST to right skewed BST and print the same
-    public void convertBSTToRightSkewedBSTAndPrint(Node rootNode)
-    {
+    public void convertBSTToRightSkewedBSTAndPrint(Node rootNode) {
         performConversion(rootNode);
         printSkewedBST();
     }
@@ -26,10 +22,9 @@ public class BSTToRightSkewedBST
         using recursion for conversion
         for ascending order we first traverse left node and then attach root node and then traverse right node to generate right Skewed BST
      */
-    private void performConversion(Node rootNode)
-    {
+    private void performConversion(Node rootNode) {
         //base condition is root node is null return
-        if(rootNode == null)
+        if (rootNode == null)
             return;
         //traverse all left nodes
         performConversion(rootNode.getLeftChild());
@@ -38,8 +33,7 @@ public class BSTToRightSkewedBST
             initialize both rootNodeOfSkewedBST and ancestorNode
             also assign left node of rootNodeOfSkewedBST to null, since in case of right Skewed BST there is no left child
          */
-        if(rootNodeOfSkewedBST == null)
-        {
+        if (rootNodeOfSkewedBST == null) {
             rootNodeOfSkewedBST = rootNode;
             rootNodeOfSkewedBST.setLeftChild(null);
             ancestorNode = rootNode;
@@ -50,8 +44,7 @@ public class BSTToRightSkewedBST
             root node left child to null, since in case of right Skewed BST there is no left child
             reassign ancestor node to root node
          */
-        else
-        {
+        else {
             ancestorNode.setRightChild(rootNode);
             rootNode.setLeftChild(null);
             ancestorNode = rootNode;
@@ -62,21 +55,19 @@ public class BSTToRightSkewedBST
     }
 
     //print right skewed BST
-    private void printSkewedBST()
-    {
+    private void printSkewedBST() {
         //if root node of skewed tree is null, print appropriate message
-        if(rootNodeOfSkewedBST == null)
+        if (rootNodeOfSkewedBST == null)
             System.out.println("Tree is empty, nothing to print, Bye!!!");
 
         //assign nextNode to root node
         Node nextNode = rootNodeOfSkewedBST;
         //loop through all the right node till null is found and print the same
-        while(nextNode != null)
-        {
+        while (nextNode != null) {
             System.out.print(nextNode.getData());
             nextNode = nextNode.getRightChild();
             //if next node is not null print "->", skip for last node
-            if(nextNode != null)
+            if (nextNode != null)
                 System.out.print(" -> ");
         }
     }

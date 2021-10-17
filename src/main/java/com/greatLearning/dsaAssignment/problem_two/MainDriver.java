@@ -3,10 +3,8 @@ package com.greatLearning.dsaAssignment.problem_two;
 /*
     Main driver class
  */
-public class MainDriver
-{
-    public static void main(String args[])
-    {
+public class MainDriver {
+    public static void main(String args[]) {
         /*create a tree
                  50
                 /  \
