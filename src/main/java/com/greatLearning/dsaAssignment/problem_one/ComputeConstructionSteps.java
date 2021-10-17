@@ -50,6 +50,8 @@ public class ComputeConstructionSteps {
             return;
         }
 
+        System.out.println("\nThe order of construction is as follows :- ");
+
         //loop till max floor size
         while (dayNumber <= maxFloorSize) {
             System.out.println("\nDay : " + dayNumber);
