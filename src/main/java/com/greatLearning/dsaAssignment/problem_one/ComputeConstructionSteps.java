@@ -44,6 +44,13 @@ public class ComputeConstructionSteps {
         int dequedFloorSize;
         int k = 0;
 
+        //if maxFloorSize is 0, print appropriate message
+        if(maxFloorSize == 0)
+        {
+            System.out.println("Total number of floors are Zero, there is no plan to print.");
+            return;
+        }
+
         //loop till max floor size
         while (dayNumber <= maxFloorSize) {
             System.out.println("\nDay : " + dayNumber);
